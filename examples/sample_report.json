@@ -1,0 +1,31 @@
+{
+  "metadata": {
+    "generated": "2026-03-20T12:55:00.504543",
+    "scanner_version": "1.0.0",
+    "target": "http://localhost:8080/vulnerabilities/sqli/?id=1&Submit=Submit"
+  },
+  "summary": {
+    "total": 12,
+    "breakdown": {"HIGH": 2, "MEDIUM": 4, "LOW": 4, "INFO": 2},
+    "risk_score": 100,
+    "risk_label": "CRITICAL"
+  },
+  "findings": [
+    {
+      "scanner": "SQL Injection",
+      "title": "Possible SQL Injection in 'id'",
+      "severity": "HIGH",
+      "description": "Parameter 'id' returned a database error when injected.",
+      "evidence": "Payload: ' | Matched: you have an error in your sql syntax",
+      "remediation": "Use parameterized queries. Never concatenate user input into SQL."
+    },
+    {
+      "scanner": "Security Headers",
+      "title": "Missing Strict-Transport-Security",
+      "severity": "HIGH",
+      "description": "HSTS missing — vulnerable to SSL-stripping attacks.",
+      "evidence": "Header not found in response.",
+      "remediation": "Add Strict-Transport-Security: max-age=31536000; includeSubDomains"
+    }
+  ]
+}
