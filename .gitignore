@@ -15,3 +15,4 @@ build/
 Thumbs.db
 *.json
 !examples/sample_report.json
+!screenshots/
