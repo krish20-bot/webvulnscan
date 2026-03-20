@@ -164,3 +164,17 @@ See [docs/EXTENDING.md](docs/EXTENDING.md) for guidance on writing scanner modul
 MIT License. See [LICENSE](LICENSE) for details.
 
 **Built for learning. Use responsibly.**
+
+## Screenshots
+
+### Terminal Output
+![Terminal Output](screenshots/terminal_output.png)
+
+### HTML Report — Risk Score & Severity
+![HTML Report](screenshots/html_report_top.png)
+
+### HTML Report — Expanded Findings
+![Findings Detail](screenshots/html_findings.png)
+
+### Crawler Mode
+![Crawler](screenshots/crawler_mode.png)
