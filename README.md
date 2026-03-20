@@ -205,22 +205,6 @@ webvulnscan/
 
 ---
 
-## Roadmap
-
-- [x] HTML report generation
-- [x] Web crawler for endpoint discovery
-- [x] Blind SQL injection (time-based)
-- [x] Command injection scanner
-- [x] SQLi exploitation with data extraction
-- [ ] Form-based testing (POST parameters)
-- [ ] SSL/TLS certificate analysis
-- [ ] Subdomain enumeration
-- [ ] DOM-based XSS via headless browser
-- [ ] REST / GraphQL API fuzzing
-- [ ] Password hash cracking integration
-
----
-
 ## Contributing
 
 1. Fork the repo
