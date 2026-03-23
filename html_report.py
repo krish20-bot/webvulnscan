@@ -22,9 +22,9 @@ def generate_html_report(results: dict) -> str:
         sev = f["severity"]
         sc = {"HIGH":"#ff2a6d","MEDIUM":"#ffb627","LOW":"#05d9e8","INFO":"#7a7d85"}
         c = sc.get(sev, "#7a7d85")
-        ev = f'<div class="finding-detail"><span class="detail-label">Evidence</span><pre class="evidence-box">{html.escape(f["evidence"])}</pre></div>' if f.get("evidence") else ""
-        rm = f'<div class="finding-detail"><span class="detail-label">Remediation</span><p class="remediation-text">{html.escape(f["remediation"])}</p></div>' if f.get("remediation") else ""
-        finding_cards += f'<div class="finding-card" style="--accent:{c};" onclick="this.classList.toggle(\'expanded\')"><div class="finding-header"><span class="severity-badge" style="background:{c};">{sev}</span><span class="finding-title">{html.escape(f["title"])}</span><span class="scanner-tag">{html.escape(f["scanner"])}</span><span class="expand-icon">&#9662;</span></div><div class="finding-body"><p class="finding-desc">{html.escape(f["description"])}</p>{ev}{rm}</div></div>'
+        ev = f'<div class="finding-detail"><span class="detail-label">Evidence</span><pre class="evidence-box">{html.escape(str(f.get("evidence","")))}</pre></div>' if f.get("evidence") else ""
+        rm = f'<div class="finding-detail"><span class="detail-label">Remediation</span><p class="remediation-text">{html.escape(str(f.get("remediation","")))}</p></div>' if f.get("remediation") else ""
+        finding_cards += f'<div class="finding-card" style="--accent:{c};" onclick="this.classList.toggle(\'expanded\')"><div class="finding-header"><span class="severity-badge" style="background:{c};">{sev}</span><span class="finding-title">{html.escape(str(f.get("title","")))}</span><span class="scanner-tag">{html.escape(str(f.get("scanner","")))}</span><span class="expand-icon">&#9662;</span></div><div class="finding-body"><p class="finding-desc">{html.escape(str(f.get("description","")))}</p>{ev}{rm}</div></div>'
     bars = ""
     for sev, c in [("HIGH","#ff2a6d"),("MEDIUM","#ffb627"),("LOW","#05d9e8"),("INFO","#7a7d85")]:
         pct = (counts[sev]/max(len(findings),1))*100
